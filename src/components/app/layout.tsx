@@ -4,6 +4,7 @@ import { Word } from "./word";
 import { useStateContext } from "./state";
 import { NotFound } from "./not-found";
 import { Phrases } from "./phrases";
+import { Welcome } from "./welcome";
 
 export const Layout: React.FC<{}> = () => {
     const state = useStateContext();
@@ -17,6 +18,7 @@ export const Layout: React.FC<{}> = () => {
                         <Form/>
                     </div>
                 </div>
+                {!state.query && <Welcome/>}
                 {(state.result !== undefined) && state.result.phrases.length > 0 && (
                     <Phrases list={state.result.phrases}/>
                 )}
