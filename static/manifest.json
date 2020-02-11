@@ -1,0 +1,21 @@
+{
+  "short_name": "Dictionary",
+  "name": "AnyDictionary",
+  "icons": [
+    {
+      "src": "/static/big-dictionary.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/static/big-dictionary.webp",
+      "type": "image/webp",
+      "sizes": "256x256"
+    }
+  ],
+  "background_color": "#f35626",
+  "theme_color": "#f35626",
+  "permissions": [
+    "clipboardWrite"
+  ]
+}

@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header .logo {
+    height: .8em;
+    margin-bottom: .2em;
+    animation: hue 60s infinite linear;
+}
+
+header {
+    color: #f35626;
+    background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue 60s infinite linear;
+}
+
+
+.list-inline {
+    list-style: none;
+    padding: 0;
+}
+
+.list-inline > li {
+    display: inline-flex;
+    width: fit-content;
+}
+
+.list-inline > li button {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.25em;
+}
+
+.list-inline > li .input-group {
+    width: fit-content;
+}
+
+.list-inline > li .form-control {
+    height: 1.75em;
+    padding-top: 0;
+    padding-bottom:0;
+    padding-left:0.25em;
+    padding-right:0.25em;
+}
+
+.list-inline > li .input-group-text {
+    font-size: 80%;
+    border: 0;
+    white-space: normal;
+}
+
+.list-inline > li img {
+    width: .8em;
+    height: .8em;
+}
+
+/*.list-bull > li:not(:first-child)::before {*/
+/*    content: "; ";*/
+/*}*/
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(-360deg);
+    }
+}
