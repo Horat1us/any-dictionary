@@ -5,9 +5,10 @@ import * as express from "express";
 import * as Multitran from "./multitran";
 import * as ContextReverso from "./context-reverso";
 import * as translation from "./translation";
-import { Template } from "./components/template";
+import {Template} from "./components/template";
 import * as App from "./components/app";
 
+import * as Database from "./database-handler";
 
 export const Handler = (
     multitran: Multitran.Service = new Multitran.Service,
@@ -22,16 +23,24 @@ export const Handler = (
                 searchParams.q,
             );
             if (state.query !== undefined) {
-                state.result = await multitran.translate(state.query, state.source, state.target);
+                await Database.createTable();
+                const store = await Database.findTranslation(state);
+
+                if (!store) {
+                    state.result = await multitran.translate(state.query, state.source, state.target);
+                    await Database.storeTranslation(state);
+                } else {
+                    state.result = store;
+                }
+
                 if (state.result === undefined) {
                     res.writeHead(404);
                 } else {
                     state.source = state.result.source;
                     state.target = state.result.target;
-                    state.result.phrases = await  contextReverso.translate(state.query, state.source, state.target);
+                    state.result.phrases = await contextReverso.translate(state.query, state.source, state.target);
                 }
             }
-
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
             ReactDOMServer.renderToNodeStream(
                 <App.StateContext.Provider value={state}>
