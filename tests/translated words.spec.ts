@@ -19,7 +19,7 @@ describe('translated words', function () {
         let translatedWordElement = await this.page.$('.translated-word');
         let translatedWord = await this.page.evaluate(x => x.value, translatedWordElement);
         if (translatedWord) assert.notEqual(await translatedWord.length, 0);
-        else throw 'word not exist';
+        else throw new Error("word not exist");
     });
 
 });
