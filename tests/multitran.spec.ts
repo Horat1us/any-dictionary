@@ -7,7 +7,7 @@ import * as cheerio from "cheerio";
 // Check if the page make translation request through multitran
 describe('multitran', function () {
     describe('Service', function () {
-        it('translate request',  async () => {
+        it('translate request', async () => {
             let service = await new Multitran.Service();
 
             let fakeData = await cheerio.load("someStrung");

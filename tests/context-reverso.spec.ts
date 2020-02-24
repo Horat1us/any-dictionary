@@ -7,7 +7,7 @@ import * as cheerio from "cheerio";
 // Check if the page make translation request through reverso
 describe('context-reverso', function () {
     describe('Service', function () {
-        it('translate request',  async () => {
+        it('translate request', async () => {
             let service = await new ContextReverso.Service();
 
             let fakeData = await cheerio.load("someStrung");

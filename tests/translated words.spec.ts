@@ -1,5 +1,4 @@
 import * as assert from 'assert';
-import * as request from 'request';
 import {describe} from "./mocha-puppetter";
 
 // Translate word and check if the words display on page
