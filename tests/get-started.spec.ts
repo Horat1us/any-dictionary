@@ -1,8 +1,7 @@
 import * as assert from 'assert';
 import {describe} from "./mocha-puppetter";
 
-process.env.OPEN = "1";
-//Click on "get started" button male example translation
+//Click on "get started" button make example translation
 describe("get started button", function () {
     it("'get started' button displays example translation", async () => {
         await this.page.waitForSelector('.btn-primary');

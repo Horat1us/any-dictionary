@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import {describe} from "./mocha-puppetter";
 
-// translate word and check if the words in the input and in the example phrases are equal
+// Translate word and check if the words in the input and in the example phrases are equal
 describe("example phrases", function () {
     const word = "cat";
 
