@@ -4,16 +4,19 @@ import {describe} from "./mocha-puppetter";
 // Translate word and check if the words in the input and in the example phrases are equal
 describe("example phrases", function () {
     const word = "cat";
+    const inputFieldS = "#queryInput";
+    const submitBtnS = "#btn-submit";
+    const translatedWordS = "#example-phrases-preview li div div mark";
 
     before(async () => {
-        await this.page.waitForSelector('#queryInput');
-        await this.page.focus('#queryInput');
+        await this.page.waitForSelector(inputFieldS);
+        await this.page.focus(inputFieldS);
         await this.page.keyboard.type(word);
-        await this.page.click('#btn-submit');
+        await this.page.click(submitBtnS);
     });
 
     it('word in the example phrases equal to the word in the input', async () => {
-        const wordElement = await this.page.$('#example-phrases-preview li div div mark');
+        const wordElement = await this.page.$(translatedWordS);
         const wordText = await this.page.evaluate(x => x.innerText, wordElement);
         assert.equal(wordText, word);
     });

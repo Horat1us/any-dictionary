@@ -10,7 +10,7 @@ describe('multitran', function () {
         it('translate request', async () => {
             let service = await new Multitran.Service();
 
-            let fakeData = await cheerio.load("someStrung");
+            let fakeData = await cheerio.load("someString");
             const cheerioStub = await sinon.stub(cheerio, "load");
             await cheerioStub.returns(fakeData);
 
