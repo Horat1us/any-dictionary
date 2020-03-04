@@ -14,11 +14,11 @@ const Item: React.FC<translation.Item> = ({ value, comment }) => {
             <button type="button" className="btn btn-light btn-copy" title="Copy">
                 <img src="/static/copy.svg" alt="Copy"/>
             </button>
-            <a href={`/?${params.toString()}`} className="btn btn-light" title="Open">
+            <a href={`/?${params.toString()}`} className="btn btn-light word-link" title="Open">
                 <img src="/static/link.svg" alt="Open"/>
             </a>
         </div>
-        <input type="text" size={value.length + 4} className="form-control bg-light border-0" value={value} readOnly/>
+        <input type="text" size={value.length + 4} className="form-control bg-light border-0 translated-word" value={value} readOnly/>
         {comment && <div className="input-group-append">
             <span className="input-group-text small bg-light">{comment}</span>
         </div>}

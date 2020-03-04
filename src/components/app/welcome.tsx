@@ -7,7 +7,7 @@ export const Welcome: React.FC<{}> = () => {
             <p className="lead">
                 Just type your query into search input. We will care about translations.
             </p>
-            <a className="btn btn-lg btn-primary" href="/?q=victory" role="button">
+            <a id="click-and-start-btn" className="btn btn-lg btn-primary" href="/?q=victory" role="button">
                 Click & Start
             </a>
         </div>

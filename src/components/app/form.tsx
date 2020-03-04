@@ -55,7 +55,7 @@ export const Form: React.FC<{}> = () => {
                     </label>
                 </div>
                 <div className="col-auto align-self-baseline">
-                    <button type="submit" className="btn btn-light">
+                    <button id="btn-submit" type="submit" className="btn btn-light">
                         Submit
                     </button>
                 </div>

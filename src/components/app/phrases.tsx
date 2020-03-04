@@ -12,7 +12,7 @@ export const Phrase: React.FC<{ tuple: [ string, string ] }> = ({ tuple: [ sourc
         </li>
     );
 };
-const ShowMoreButton = `<button class="btn btn-outline-primary" type="button" onclick="this.parentNode.nextElementSibling.removeAttribute('hidden');this.parentElement.hidden=true">Show More</button>`;
+const ShowMoreButton = `<button id="btn-show-more" class="btn btn-outline-primary" type="button" onclick="this.parentNode.nextElementSibling.removeAttribute('hidden');this.parentElement.hidden=true">Show More</button>`;
 
 export const Phrases: React.FC<{ list: Array<[ string, string ]> }> = ({ list }) => {
 
@@ -23,11 +23,11 @@ export const Phrases: React.FC<{ list: Array<[ string, string ]> }> = ({ list })
                     Example phrases
                 </h5>
             </div>
-            <ul className="list-group list-group-flush">
+            <ul id="example-phrases-preview" className="list-group list-group-flush">
                 {list.slice(0, 2).map((tuple, i) => (<Phrase tuple={tuple} key={i}/>))}
             </ul>
             <div className="card-body text-center" dangerouslySetInnerHTML={{__html: ShowMoreButton}}/>
-            <ul className="list-group list-group-flush animate fadeInDown" hidden>
+            <ul id="example-phrases-full" className="list-group list-group-flush animate fadeInDown" hidden>
                 {list.slice(2).map((tuple, i) => (<Phrase tuple={tuple} key={i}/>))}
             </ul>
         </div>
