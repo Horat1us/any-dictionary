@@ -1,8 +1,8 @@
 import * as assert from 'assert';
-import {describe} from "./mocha-puppetter";
+import {describe, Suite} from "./mocha-puppetter";
 
 //Click on "show more" button displays full list of example phrases
-describe('show more button', function () {
+describe('show more button', function (this: Suite) {
     let word = 'cat';
     const inputFieldS = "#queryInput";
     const submitBtnS = "#btn-submit";

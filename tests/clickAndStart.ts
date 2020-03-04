@@ -1,8 +1,8 @@
 import * as assert from 'assert';
-import {describe} from "./mocha-puppetter";
+import {describe, Suite} from "./mocha-puppetter";
 
 //Click on "get started" button make example translation
-describe("click and start button", function () {
+describe("click and start button", function (this: Suite) {
     const clickAndStartBtnS = "#click-and-start-btn";
     const phraseListS = "#example-phrases-preview";
     

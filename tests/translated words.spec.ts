@@ -1,8 +1,8 @@
 import * as assert from 'assert';
-import {describe} from "./mocha-puppetter";
+import {describe, Suite} from "./mocha-puppetter";
 
 // Translate word and check if the words display on page
-describe('translated words', function () {
+describe('translated words', function (this: Suite) {
     let word = 'cat';
     const inputFieldS = "#queryInput";
     const submitBtnS = "#btn-submit";
